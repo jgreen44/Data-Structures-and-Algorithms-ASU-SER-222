@@ -104,35 +104,64 @@ public class ser222_01_01_hw02_base {
 
     //TODO: complete method.
     private static void makeMazeRecursive(char[][] level, int startX, int startY, int endX, int endY) {
-        Random rand = new Random();
-        int col = rand.nextInt(endX);
-        int row = rand.nextInt(endY);
+
 
         // set the resolution of the final area, not to exceed 3x3
         if (startX - endX > 3 || startY - endY > 3) {
             return;
         } else {
 
+
             if (startX < endX && startY < endY) {
+                Random rand = new Random();
+                int col = rand.nextInt(endX - startX) + startX;
+                int row = rand.nextInt(endY - startY) + startY;
 
                 // create randomized vertical wall
-                for (int y = 0; y < LEVEL_HEIGHT; y++) {
-                    level[y][endX / 2] = ICON_WALL;
+                for (int y = startY; y <= endY ; y++) {
+                    level[y][col] = ICON_WALL;
 
                 }
-                // punch a randomized section of the wall out
-                level[row][endX / 2] = ICON_BLANK;
 
+                // punch a randomized section of the wall out
+                if (row == 1){
+                    level[rand.nextInt
+                            (endY - row + 1)
+                            + row -1][col] = ICON_BLANK;
+                }
+                if(row != 1){
+                    level[rand.nextInt(row -startY + 1) + startY]
+                            [col] = ICON_BLANK;
+                    level[rand.nextInt(endY - row + 1) + row][col]
+                            = ICON_BLANK;
+                }
 
                 // create randomized horizontal wall
-                for (int x = 0; x < LEVEL_WIDTH; x++) {
-                    level[endY / 2][x] = ICON_WALL;
+                for (int x = startX; x <= endX; x++) {
+                    level[row][x] = ICON_WALL;
                 }
-                // punch a randomized section of the wall out
-                level[endY / 2][col] = ICON_BLANK;
 
-                makeMazeRecursive(level, startX +1, startY +1, endX - 1, endY  -1);
+                // punch a randomized section of the wall out
+                if(col == 1){
+                    level[row][rand.nextInt
+                            (endX - col +1)
+                            + col] = ICON_BLANK;
+                }
+                if(col != 1){
+                    level[row][rand.nextInt
+                            (col - startX + 1)
+                            + startX] = ICON_BLANK;
+                    level[row][rand.nextInt
+                            (col - startX + 1)
+                            + startX] = ICON_BLANK;
+                }
+
+                makeMazeRecursive(level, startX, startY, col  -1, row - 1);
+                makeMazeRecursive(level, col + 1, startY, endX, row - 1);
+
             }
+
+
 
         }
     }
