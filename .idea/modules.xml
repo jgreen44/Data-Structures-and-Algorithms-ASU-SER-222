@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Development.iml" filepath="$PROJECT_DIR$/.idea/Development.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module 1 - Recursion/Programming/Programming.iml" filepath="$PROJECT_DIR$/Module 1 - Recursion/Programming/Programming.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SER222_01_01_Samples/SER222_01_01_Samples.iml" filepath="$PROJECT_DIR$/SER222_01_01_Samples/SER222_01_01_Samples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SER222_01_02_Samples/SER222_01_02_Samples.iml" filepath="$PROJECT_DIR$/SER222_01_02_Samples/SER222_01_02_Samples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SER222_01_03_Samples/SER222_01_03_Samples.iml" filepath="$PROJECT_DIR$/SER222_01_03_Samples/SER222_01_03_Samples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SER222_01_04_Samples/SER222_01_04_Samples.iml" filepath="$PROJECT_DIR$/SER222_01_04_Samples/SER222_01_04_Samples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SER222_02_01_Samples/SER222_02_01_Samples.iml" filepath="$PROJECT_DIR$/SER222_02_01_Samples/SER222_02_01_Samples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SER222_02_02_Samples/SER222_02_02_Samples.iml" filepath="$PROJECT_DIR$/SER222_02_02_Samples/SER222_02_02_Samples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SER222_02_04_Samples/SER222_02_04_Samples.iml" filepath="$PROJECT_DIR$/SER222_02_04_Samples/SER222_02_04_Samples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SER222_03_04_samples/SER222_03_04_samples.iml" filepath="$PROJECT_DIR$/SER222_03_04_samples/SER222_03_04_samples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SER222_04_01_samples/SER222_04_01_samples.iml" filepath="$PROJECT_DIR$/SER222_04_01_samples/SER222_04_01_samples.iml" />
+    </modules>
+  </component>
+</project>
