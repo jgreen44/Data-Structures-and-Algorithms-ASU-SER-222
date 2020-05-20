@@ -105,7 +105,7 @@ public class ser222_01_01_hw02_base {
     //TODO: complete method.
     private static void makeMazeRecursive(char[][] level, int startX, int startY, int endX, int endY) {
 
-
+        Random rand = new Random();
         // set the resolution of the final area, not to exceed 3x3
         if (startX - endX > 3 || startY - endY > 3) {
             return;
@@ -113,7 +113,7 @@ public class ser222_01_01_hw02_base {
 
 
             if (startX < endX && startY < endY) {
-                Random rand = new Random();
+
                 int col = rand.nextInt(endX - startX) + startX;
                 int row = rand.nextInt(endY - startY) + startY;
 
