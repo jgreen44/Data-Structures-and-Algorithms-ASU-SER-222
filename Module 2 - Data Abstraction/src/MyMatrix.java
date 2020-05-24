@@ -62,31 +62,35 @@ public class MyMatrix implements Matrix {
     public Matrix plus(Matrix other) {
         int matrixSum = 0;
         int[][] newMatrixSum = new int[this.rows][this.cols];
-        try {
-            for (int i = 0; i < this.rows ; i++) {
-                for (int j = 0; j < this.cols ; j++) {
+        if(this.getRows() == other.getRows() && this.getColumns() == other.getColumns()) {
+            for (int i = 0; i < this.rows; i++) {
+                for (int j = 0; j < this.cols; j++) {
                     matrixSum = this.getElement(i, j) + other.getElement(i, j);
                     newMatrixSum[i][j] += matrixSum;
                 }
             }
-        }catch (Exception e) {
-
+        }else{
+            System.out.println("Cannot add matrices! Dimensions are not valid.");
         }
-
         return new MyMatrix(newMatrixSum);
     }
 
     public Matrix minus(Matrix other) {
         int matrixMinus = 0;
-
         int[][] newMatrixMinus = new int[this.rows][this.cols];
-        for (int i = 0; i < this.rows ; i++) {
-            for (int j = 0; j < this.cols ; j++) {
-                matrixMinus = this.getElement(i, j) - other.getElement(i, j);
-                newMatrixMinus[i][j] += matrixMinus;
+        if(this.getRows() == other.getRows() && this.getColumns() == other.getColumns()){
+
+            for (int i = 0; i < this.rows ; i++) {
+                for (int j = 0; j < this.cols ; j++) {
+                    matrixMinus = this.getElement(i, j) - other.getElement(i, j);
+                    newMatrixMinus[i][j] += matrixMinus;
+                }
             }
+        }else{
+            System.out.println("Cannot subtract matrices! Dimensions are not valid.");
         }
         return new MyMatrix(newMatrixMinus);
+
     }
 
     public Matrix multiply(Matrix other) {
