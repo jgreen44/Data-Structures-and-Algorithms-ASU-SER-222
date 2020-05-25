@@ -773,7 +773,7 @@ ANS
 
 \end_deeper
 \begin_layout Enumerate
-One of the main operations for a PQ is to move an element lower in a heap,
+One of the AnotherCounter operations for a PQ is to move an element lower in a heap,
  so that it will be in the proper order.
  It is implemented by the sink() method.
  According to lecture, this particular implementation takes 

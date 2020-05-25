@@ -1106,7 +1106,7 @@ Imagine that you have a linear probe hashtable, with M=11.
 \end_inset
 
  is the number of times the algorithm has tried to insert the key.
- Your drawing should include the main size M array.
+ Your drawing should include the AnotherCounter size M array.
  [10 points] 
 \begin_inset Note Note
 status collapsed
