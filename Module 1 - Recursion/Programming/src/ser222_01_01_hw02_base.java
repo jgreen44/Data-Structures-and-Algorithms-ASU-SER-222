@@ -103,9 +103,7 @@ public class ser222_01_01_hw02_base {
     }
 
     public static int randInt(int min, int max) {
-        Random rand = new Random();
-        int randNum = rand.nextInt((max - min) + 1) + min;
-        return randNum;
+        return new Random().nextInt((max - min) + 1) + min;
     }
 
     //TODO: complete method.
@@ -157,7 +155,7 @@ public class ser222_01_01_hw02_base {
             }
             // Lower
             if (randY - startY > 3) {    //SouthWest
-                makeMazeRecursive(level, startX, startY + 1, randX - 1, endY);
+                makeMazeRecursive(level, startX, startY, randX - 1, randY  -1);
             }
         }
 
@@ -165,11 +163,11 @@ public class ser222_01_01_hw02_base {
         if (endX - randX > 3) {
             // Upper
             if (endY - randY > 3) {
-                makeMazeRecursive(level, startX, randY + 1, endX - 1, endY);
+                makeMazeRecursive(level, randX + 1, randY + 1, endX , endY);
             }
-            // Lower
+//             Lower
             if (randY - startY > 3) {
-                makeMazeRecursive(level, startX, startY + 1, endX - 1, endY);
+                makeMazeRecursive(level, randX + 1, startY, endX, randY - 1);
             }
         }
 
