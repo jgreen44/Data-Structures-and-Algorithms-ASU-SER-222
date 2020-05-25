@@ -9,7 +9,7 @@
 
 import java.util.Random;
 
-public class ser222_01_01_hw02_base {
+public class GreenMazeGen {
     //standard console size in characters.
     private static final int LEVEL_HEIGHT = 25;
     private static final int LEVEL_WIDTH = 80;
