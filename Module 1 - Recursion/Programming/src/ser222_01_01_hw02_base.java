@@ -14,7 +14,7 @@ public class ser222_01_01_hw02_base {
     private static final int LEVEL_HEIGHT = 25;
     private static final int LEVEL_WIDTH = 80;
 
-    private static final char ICON_WALL = 0x2588;
+    private static final char ICON_WALL = '#';
     private static final char ICON_BLANK = ' ';
 
     /**
