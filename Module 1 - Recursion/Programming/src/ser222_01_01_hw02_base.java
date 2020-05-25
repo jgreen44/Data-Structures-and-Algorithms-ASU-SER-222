@@ -14,7 +14,7 @@ public class ser222_01_01_hw02_base {
     private static final int LEVEL_HEIGHT = 25;
     private static final int LEVEL_WIDTH = 80;
 
-    private static final char ICON_WALL = '#';
+    private static final char ICON_WALL = 0x2588;
     private static final char ICON_BLANK = ' ';
 
     /**
@@ -130,22 +130,22 @@ public class ser222_01_01_hw02_base {
         int rndDoor = randInt(1, 4);
         // random punch through East
         if (rndDoor != 1) {
-            level[randY][randInt(startX, randX - 1)] = ICON_BLANK;
+            level[randY][randInt(startX, randX)] = ICON_BLANK;
 
         }
         // random punch through West
         if (rndDoor != 2) {
-            level[randY][randInt(randX, endX - 1)] = ICON_BLANK;
+            level[randY][randInt(randX, endX)] = ICON_BLANK;
 
         }
         // random punch through North
         if (rndDoor != 3) {
-            level[randInt(randY, endY - 1)][randX] = ICON_BLANK;
+            level[randInt(randY, endY)][randX] = ICON_BLANK;
 
         }
         // random punch through South
         if (rndDoor != 4) {
-            level[randInt(startY, randY - 1)][randX] = ICON_BLANK;
+            level[randInt(startY, randY)][randX] = ICON_BLANK;
 
         }
 
@@ -155,23 +155,23 @@ public class ser222_01_01_hw02_base {
             if (endY - randY > 3) {
                 makeMazeRecursive(level, startX, randY + 1, randX - 1, endY);
             }
-//            // Lower
-//            if (randY - startY > 3) {    //SouthWest
-//                makeMazeRecursive(level, startX, startY + 1, randX - 1, endY);
-//            }
+            // Lower
+            if (randY - startY > 3) {    //SouthWest
+                makeMazeRecursive(level, startX, startY + 1, randX - 1, endY);
+            }
         }
 
-        // Right Side
-//        if (endX - randX > 3) {
-//            // Upper
-//            if (endY - randY > 3) {
-//                makeMazeRecursive(level, startX, randY + 1, endX - 1, endY);
-//            }
-//            // Lower
-//            if (randY - startY > 3) {
-//                makeMazeRecursive(level, startX, startY + 1, endX - 1, endY);
-//            }
-//        }
+//         Right Side
+        if (endX - randX > 3) {
+            // Upper
+            if (endY - randY > 3) {
+                makeMazeRecursive(level, startX, randY + 1, endX - 1, endY);
+            }
+            // Lower
+            if (randY - startY > 3) {
+                makeMazeRecursive(level, startX, startY + 1, endX - 1, endY);
+            }
+        }
 
     }
 
