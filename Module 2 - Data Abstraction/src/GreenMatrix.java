@@ -7,14 +7,14 @@ import org.jetbrains.annotations.NotNull;
  * @author Jason Green, jgreen44@asu.edu
  * @version 1.0
  */
-public class MyMatrix implements Matrix {
+public class GreenMatrix implements Matrix {
 
     private int[][] matrix;
     private final int rows;
     private final int cols;
 
     // constructor
-    public MyMatrix(int[] @NotNull [] data) {
+    public GreenMatrix(int[] @NotNull [] data) {
         if (data.length == 0) {
             this.rows = 0;
             this.cols = 0;
@@ -56,7 +56,7 @@ public class MyMatrix implements Matrix {
                 newMatrixScalar[i][j] += matrixScale;
             }
         }
-        return new MyMatrix(newMatrixScalar);
+        return new GreenMatrix(newMatrixScalar);
     }
 
     public Matrix plus(Matrix other) {
@@ -72,7 +72,7 @@ public class MyMatrix implements Matrix {
         }else{
             System.out.println("Cannot add matrices! Dimensions are not valid.");
         }
-        return new MyMatrix(newMatrixSum);
+        return new GreenMatrix(newMatrixSum);
     }
 
     public Matrix minus(Matrix other) {
@@ -89,7 +89,7 @@ public class MyMatrix implements Matrix {
         }else{
             System.out.println("Cannot subtract matrices! Dimensions are not valid.");
         }
-        return new MyMatrix(newMatrixMinus);
+        return new GreenMatrix(newMatrixMinus);
 
     }
 
@@ -103,7 +103,7 @@ public class MyMatrix implements Matrix {
                 newMatrixMultiply[i][j] += matrixMultiply;
             }
         }
-        return new MyMatrix(newMatrixMultiply);
+        return new GreenMatrix(newMatrixMultiply);
     }
 
     @Override
@@ -146,10 +146,10 @@ public class MyMatrix implements Matrix {
         int[][] data3 = {{1, 4, 7}, {2, 5, 8}, {3, 6, 9}};
         int[][] data4 = {{1, 4, 7}, {2, 5, 8}, {3, 6, 9}};
 
-        Matrix m1 = new MyMatrix(data1);
-        Matrix m2 = new MyMatrix(data2);
-        Matrix m3 = new MyMatrix(data3);
-        Matrix m4 = new MyMatrix(data4);
+        Matrix m1 = new GreenMatrix(data1);
+        Matrix m2 = new GreenMatrix(data2);
+        Matrix m3 = new GreenMatrix(data3);
+        Matrix m4 = new GreenMatrix(data4);
 
         System.out.println("m1 --> Rows: " + m1.getRows() + " Columns: " + m1.getColumns());
         System.out.println("m2 --> Rows: " + m2.getRows() + " Columns: " + m2.getColumns());
