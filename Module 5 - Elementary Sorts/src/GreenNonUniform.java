@@ -62,6 +62,7 @@ public class GreenNonUniform implements SER222_02_01_HW02_Submission {
      **************************************************************************/
     private double smallTime;
     private double largeTime;
+    static Random random = new Random(15L);
 
     //TODO: implement interface methods.
     public GreenNonUniform() {
@@ -85,7 +86,7 @@ public class GreenNonUniform implements SER222_02_01_HW02_Submission {
     @Override
     public Integer[] generateTestDataHalfs(int size) {
         Integer[] array = new Integer[size];
-        int middle = (size / 2) + (size % 2);
+        int middle = (size / 2);
         int index = middle;
         int count = 0;
 
@@ -103,13 +104,12 @@ public class GreenNonUniform implements SER222_02_01_HW02_Submission {
     @Override
     public Integer[] generateTestDataHalfRandom(int size) {
         Integer[] array = new Integer[size];
-        int test = 0;
+        int test;
         for (int i = 0; i < array.length; i++) {
             if(i <= array.length / 2){
                 array[i] = 0;
             }else{
-                test = randInt(-138617093, 138617093);
-                array[i] = test;
+                array[i] =  random.nextInt();
             }
         }
         return array;
@@ -117,7 +117,7 @@ public class GreenNonUniform implements SER222_02_01_HW02_Submission {
 
     @Override
     public double computeDoublingFormula(double t1, double t2) {
-        return (Math.log(t1/t2));
+        return (Math.log(t2/t1));
     }
 
     @Override
@@ -179,13 +179,16 @@ public class GreenNonUniform implements SER222_02_01_HW02_Submission {
 
     }
 
-    public static int randInt(int min, int max) {
-        return new Random().nextInt(max - min) + min;
-    }
+
+//    public static int randInt(int min, int max) {
+////        random.setSeed(15L);
+//        return random.nextInt(max - min);
+//
+//    }
 
     public static void main(String args[]) {
         SER222_02_01_HW02_Submission me = new GreenNonUniform();
-        int size = 4096;
+        int size = 4096 * 4;
 
 
         //NOTE: feel free to change size here. all other code must go in the
