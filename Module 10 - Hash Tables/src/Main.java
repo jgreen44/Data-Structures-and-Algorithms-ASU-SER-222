@@ -21,13 +21,13 @@ public class Main {
         testIntegers(new TwoProbeChainHT<Integer, Integer>());
         testStrings(new TwoProbeChainHT<String, Integer>());
 
-//        System.out.println("GeneralProbingHT: ");
-//        testIntegers(new LinearProbingHT<Integer, Integer>());
-//        testStrings(new LinearProbingHT<String, Integer>());
+        System.out.println("GeneralProbingHT: ");
+        testIntegers(new LinearProbingHT<Integer, Integer>());
+        testStrings(new LinearProbingHT<String, Integer>());
         
-//        System.out.println("QuadProbingHT: ");
-//        testIntegers(new QuadProbingHT<Integer, Integer>());
-//        testStrings(new QuadProbingHT<String, Integer>());
+        System.out.println("QuadProbingHT: ");
+        testIntegers(new QuadProbingHT<Integer, Integer>());
+        testStrings(new QuadProbingHT<String, Integer>());
     }
     
     /**

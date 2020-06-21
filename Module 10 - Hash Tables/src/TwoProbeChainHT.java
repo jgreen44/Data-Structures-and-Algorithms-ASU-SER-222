@@ -43,7 +43,7 @@ public class TwoProbeChainHT<Key, Value> implements SymbolTable<Key, Value> {
 
     @Override
     public void put(Key key, Value val) {
-        LinkedList<TwoProbeChain> smallLinkedList;
+
         for (int i = 0; i < st[hash(key)].size(); i++) {
             if (st[hash(key)].get(i).key.equals(key)) {
                 st[hash(key)].get(i).value = val;
@@ -57,15 +57,12 @@ public class TwoProbeChainHT<Key, Value> implements SymbolTable<Key, Value> {
             }
 
         }
-        smallLinkedList(key).add(new TwoProbeChain<>(key, val));
-        N++;
-    }
-
-    private LinkedList<TwoProbeChain> smallLinkedList(Key key) {
+        LinkedList<TwoProbeChain> smallLinkedList = null;
         if (st[hash(key)].size() < st[hash2(key)].size()) {
-            return st[hash2(key)];
+            assert false;
+            smallLinkedList.add(new TwoProbeChain<>(key, val));
         }
-        return st[hash(key)];
+        N++;
     }
 
     @Override
@@ -128,6 +125,4 @@ public class TwoProbeChainHT<Key, Value> implements SymbolTable<Key, Value> {
         }
         return list;
     }
-
-
 }
