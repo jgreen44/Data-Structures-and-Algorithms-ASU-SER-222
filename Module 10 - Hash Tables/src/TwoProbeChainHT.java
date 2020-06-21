@@ -4,7 +4,7 @@ public class TwoProbeChainHT<Key, Value> implements SymbolTable<Key, Value> {
 
     private int N;
     private int M;
-    private LinkedList<TwoProbeChain>[] st;
+    private LinkedList<TwoProbeChain<Key, Value>>[] st;
 
     public static class TwoProbeChain<Key, Val> {
         private final Key key;
@@ -25,9 +25,9 @@ public class TwoProbeChainHT<Key, Value> implements SymbolTable<Key, Value> {
         this.M = size;
         this.N = 0;
 
-        st = (LinkedList<TwoProbeChain>[]) new LinkedList[M];
+        st = (LinkedList<TwoProbeChain<Key, Value>>[]) new LinkedList[M];
         for (int i = 0; i < M; i++) {
-            st[i] = new LinkedList<TwoProbeChain>();
+            st[i] = new LinkedList<>();
         }
 
     }
@@ -57,7 +57,7 @@ public class TwoProbeChainHT<Key, Value> implements SymbolTable<Key, Value> {
             }
 
         }
-        LinkedList<TwoProbeChain> smallLinkedList = null;
+        LinkedList<TwoProbeChain<Key, Value>> smallLinkedList = null;
         if (st[hash(key)].size() < st[hash2(key)].size()) {
             assert false;
             smallLinkedList.add(new TwoProbeChain<>(key, val));
