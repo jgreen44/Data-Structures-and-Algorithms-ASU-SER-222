@@ -14,7 +14,8 @@ public class Mergesort {
         assert isSorted(a);
     }
     
-    private static void sort(Comparable[] a, Comparable[] aux, int lo, int hi) {
+    private static void sort(Comparable[] a, Comparable[]
+            aux, int lo, int hi) {
         if (hi <= lo) return;
         int mid = lo + (hi - lo) / 2;
         
@@ -23,7 +24,8 @@ public class Mergesort {
         merge(a, aux, lo, mid, hi);
     }
     
-    public static void merge(Comparable[] a, Comparable[] aux, int lo, int mid, int hi)
+    public static void merge(Comparable[] a, Comparable[]
+            aux, int lo, int mid, int hi)
     {
         assert isSorted(a, lo, mid);
         assert isSorted(a, mid+1, hi);

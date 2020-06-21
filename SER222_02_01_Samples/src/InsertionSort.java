@@ -43,8 +43,12 @@ public class InsertionSort
     
     public static void main(String[] args) {
         String[] a = {"S", "O", "R", "T", "E", "X", "A", "M", "P", "L", "E"};
-        sort(a);
-        assert isSorted(a);
-        show(a);
+        Integer[] b = {21, 16, 3, 7, 23, 12};
+//        sort(a);
+//        assert isSorted(a);
+//        show(a);
+        sort(b);
+        assert isSorted(b);
+        show(b);
     }
 }

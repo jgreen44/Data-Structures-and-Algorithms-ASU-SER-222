@@ -5,8 +5,8 @@ import java.util.Set;
 /**
  * Symbol table testing ground.
  * 
- * @author (your name), Acuna
- * @version (version)
+ * @author Jason Green, jgreen44@asu.edu
+ * @version 1.0
  */
 public class Main {
     
@@ -21,13 +21,13 @@ public class Main {
         testIntegers(new TwoProbeChainHT<Integer, Integer>());
         testStrings(new TwoProbeChainHT<String, Integer>());
 
-        System.out.println("GeneralProbingHT: ");
-        testIntegers(new LinearProbingHT<Integer, Integer>());
-        testStrings(new LinearProbingHT<String, Integer>());
+//        System.out.println("GeneralProbingHT: ");
+//        testIntegers(new LinearProbingHT<Integer, Integer>());
+//        testStrings(new LinearProbingHT<String, Integer>());
         
-        System.out.println("QuadProbingHT: ");
-        testIntegers(new QuadProbingHT<Integer, Integer>());
-        testStrings(new QuadProbingHT<String, Integer>());
+//        System.out.println("QuadProbingHT: ");
+//        testIntegers(new QuadProbingHT<Integer, Integer>());
+//        testStrings(new QuadProbingHT<String, Integer>());
     }
     
     /**
@@ -94,14 +94,14 @@ public class Main {
         Integer ret = st.get(10);
         assert(ret == null)             : "returned non-null for key that doesn't exist";
         assert(st.size() == size)       : "size changed";        
-        assert(!st.contains(10))        : "a key that doesn't exist appeared after get'ing it";
+        assert(!st.contains(10))        : "a key that doesn't exist appeared after getting it";
 
         //get key there (2, 96)
         size = st.size();
         ret = st.get(2);
         assert(ret == 96)               : "returned incorrect value for key";
         assert(st.size() == size)       : "size changed";        
-        assert(st.contains(2))          : "key vanished after get'ing it";
+        assert(st.contains(2))          : "key vanished after getting it";
         
         
         System.out.println("  Testing delete... ");
