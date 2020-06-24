@@ -1,25 +1,51 @@
 import java.util.LinkedList;
 
+/**
+ * The type Linear probing ht.
+ *
+ * @param <Key>   the type parameter
+ * @param <Value> the type parameter
+ */
 public class LinearProbingHT<Key, Value> implements SymbolTable<Key, Value> {
 
     private int N;
-    private final int M;
+    private int M;
     private final LinearProbe<Key, Value>[] addContents;
 
+    /**
+     * The type Linear probe.
+     *
+     * @param <Key> the type parameter
+     * @param <Val> the type parameter
+     */
     public static class LinearProbe<Key, Val> {
-        private final Key key;
+        private Key key;
         private Val value;
 
+        /**
+         * Instantiates a new Linear probe.
+         *
+         * @param key   the key
+         * @param value the value
+         */
         public LinearProbe(Key key, Val value) {
             this.key = key;
             this.value = value;
         }
     }
 
+    /**
+     * Instantiates a new Linear probing ht.
+     */
     public LinearProbingHT() {
         this(997);
     }
 
+    /**
+     * Instantiates a new Linear probing ht.
+     *
+     * @param size the size
+     */
     public LinearProbingHT(int size) {
         this.M = size;
         this.N = 0;
@@ -34,19 +60,20 @@ public class LinearProbingHT<Key, Value> implements SymbolTable<Key, Value> {
     @Override
     public void put(Key key, Value val) {
         int i = 0;
-        for (int j = hash(key); addContents[i] != null; i = i + 1) {
+        for (i = hash(key); addContents[i] != null; i = (i + 1) % M) {
             if (addContents[i].key.equals(key)) {
                 addContents[i].value = val;
+                return;
             }
         }
-        addContents[i] = new LinearProbe<>(key, val);
+        addContents[i] = new LinearProbe<Key, Value>(key, val);
         N++;
 
     }
 
     @Override
     public Value get(Key key) {
-        for (int i = hash(key); addContents[i] != null; i = i + 1) {
+        for (int i = hash(key); addContents[i] != null; i = (i + 1) % M) {
             if (addContents[i].key.equals(key)) {
                 return addContents[i].value;
             }
@@ -56,13 +83,15 @@ public class LinearProbingHT<Key, Value> implements SymbolTable<Key, Value> {
 
     @Override
     public void delete(Key key) {
-        for (int i = hash(key); addContents[i] != null; i = i + 1) {
-            for (int j = i + 1; addContents[i] != null ; j = j + 1) {
-                addContents[i] = addContents[j];
-                i = i + 1;
+        for (int i = hash(key); addContents[i] != null; i = (i + 1) % M) {
+            if (addContents[i].key.equals(key)){
+                for (int j = i + 1; addContents[i] != null ; j = (j + 1) % M) {
+                    addContents[i] = addContents[j];
+                    i = (i + 1) % M;
+                }
+                addContents[i] = null;
+                N--;
             }
-            addContents[i] = null;
-            N--;
         }
     }
 

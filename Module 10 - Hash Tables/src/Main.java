@@ -24,7 +24,7 @@ public class Main {
         System.out.println("GeneralProbingHT: ");
         testIntegers(new LinearProbingHT<Integer, Integer>());
         testStrings(new LinearProbingHT<String, Integer>());
-        
+
         System.out.println("QuadProbingHT: ");
         testIntegers(new QuadProbingHT<Integer, Integer>());
         testStrings(new QuadProbingHT<String, Integer>());
@@ -146,14 +146,14 @@ public class Main {
         st.put("AAAA", 7);
         st.put("A", 1);
         
-        assert(!st.isEmpty())           : "symbol table is empty after inserting elemetns";
-        assert(st.size() == 10)         : "does not contain correct number of elements";
-        assert(st.contains("112323"))  : "added key -42341145 does not exist";
-        assert(st.contains("a"))          : "added key 0 does not exist" ;
-        assert(st.contains("DFKDJSFS"))   : "added key 38334343 does not exist";
-        assert(!st.contains("b")) : "contains unknown key -62341145";
-        assert(!st.contains("AA"))        : "contains unknown key -1";
-        assert(!st.contains("FDFDSFSFDSFDS"))  : "contains unknown key -58334343";
+        assert(!st.isEmpty())                   : "symbol table is empty after inserting elemetns";
+        assert(st.size() == 10)                 : "does not contain correct number of elements";
+        assert(st.contains("112323"))           : "added key -42341145 does not exist";
+        assert(st.contains("a"))                : "added key 0 does not exist" ;
+        assert(st.contains("DFKDJSFS"))         : "added key 38334343 does not exist";
+        assert(!st.contains("b"))               : "contains unknown key -62341145";
+        assert(!st.contains("AA"))              : "contains unknown key -1";
+        assert(!st.contains("FDFDSFSFDSFDS"))   : "contains unknown key -58334343";
 
         Set<String> stKeys = new HashSet<>();
         for(String i : st.keys())
